@@ -1,0 +1,291 @@
+12.02.2020. Предавање: JavaScript објекти
+
+Примери које смо радили овај дан на предавању:
+
+1. пример 
+(1. način)
+
+let automobil = { marka : "Fiat",
+model : "Punto",
+godina : 2010 ,
+boja : "bela" };
+
+- исписаће: undefined
+
+1. пример 
+(2. način)
+
+let automobil = new Object();
+automobil.marka="Fiat";
+automobil.model="Punto";
+automobil.godina=2010;
+automobil.boja="bela";
+
+- исписаће: "bela"
+
+2. пример: Napraviti objekat osoba. Objekat treba da sadrži ime, prezime, godinu rođenja (JMBG) i prebivalište.
+(1. način)
+
+let osoba = {
+ime : "Zoran",
+prezime : "Gavrilovic",
+jmbg : "12020204510218",
+prebivaliste: "Beograd",
+}
+
+- исписаће: undefined
+
+2. пример 
+(2. način)
+
+ let osobaDva = new Object();
+osobaDva.ime = "Pera";
+osobaDva.prezime = "Perić";
+osobaDva.jmbg = 12022020;
+
+- исписаће: 12022020
+
+3. пример - Svojstva objekata: 
+(1. način)
+
+let automobil = { marka : "Fiat",
+model : "Punto",
+godina : 2010 ,
+boja : "bela" };
+alert(automobil.model); 
+
+- исписаће: Punto
+
+3. пример: Svojstva objekata 
+(2. način)
+
+let automobil = { marka : "Fiat",
+model : "Punto",
+godina : 2010 ,
+boja : "bela" };
+alert(automobil["godina"]);
+
+- исписаће: 2010
+
+4. пример - Ispisati svojstvo objekta:
+(1. način)
+
+ let osobaDva = new Object();
+osobaDva.ime = "Pera";
+osobaDva.prezime = "Perić";
+osobaDva.jmbg = 12022020;
+console.log(osobaDva.prezime); 
+
+- исписаће: Perić
+
+5. пример - Ispisati svojstvo objekta:
+(2. način)
+
+let osobaDva = new Object();
+osobaDva.ime = "Pera";
+osobaDva.prezime = "Perić";
+osobaDva.jmbg = 12022020;
+alert(osobaDva["ime"]); 
+
+- исписаће: Pera
+
+
+6. пример - Menjanje vrednosti svojstva (npr. iz Zoran u Petar):
+
+let osoba = {
+ime: "Zoran",
+prezime: "Gavrilovic",
+jmbg: 180297471021,
+prebivaliste: "Beograd"
+} 
+osoba.ime="Petar";
+console.log(osoba["ime"]);
+
+- исписаће: Petar
+
+
+7. пример - promena u ime "Niki":
+
+osoba.ime="Niki";
+console.log(osoba["ime"]);
+
+- исписаће: Niki
+
+
+8. пример - Napraviti objekat životinja koji treba da ima četiri svojstva. Svakom svojstvu pristupiti i ispisati ga. Zatim izmeniti vrednosti sva četiri svojstva.
+
+let zivotinja = {
+vrsta: "Delfin",
+staniste: "Voda",
+boja: "Plava",
+ljubimac: "Svaciji",
+}
+console.log(zivotinja["vrsta"]);
+alert(zivotinja["staniste"]);
+console.log(zivotinja.boja);
+alert(zivotinja.ljubimac);
+
+- исписаће: 
+Delfin
+Voda
+Plava
+Svaciji
+
+zivotinja.vrsta="Mrav";
+console.log(zivotinja["vrsta"]);
+
+zivotinja.staniste="Zemlja";
+console.log(zivotinja["staniste"]);
+
+zivotinja.boja="Crn";
+console.log(zivotinja["boja"]);
+
+zivotinja.ljubimac="Niciji";
+console.log(zivotinja["ljubimac"]);
+
+
+9. пример - Brisanje svojstva objekta:
+delete automobil.boja;                                    // prvi način
+delete automobil["godina"];                        // drugi način
+
+
+10. пример - For...in petlja:
+let automobil = { marka : "Fiat",
+model : "Punto",
+godina : 2010 ,
+boja : "bela" };
+for( i in automobil){
+alert(i+": "+automobil[i]);
+}
+
+ili pomoću console.log:
+
+let automobil = { marka : "Fiat",
+model : "Punto",
+godina : 2010 ,
+boja : "bela" };
+for( i in automobil){
+console.log(i+": "+automobil[i]);
+}
+
+- исписаће све парове svojstvo: vrednost 
+marka: Fiat
+model: Punto
+godina: 2010
+boja: bela
+
+
+Da smo napisali npr.:
+let automobil = { marka : "Fiat",
+model : "Punto",
+godina : 2010 ,
+boja : "bela" };
+for(f in automobil){
+console.log(automobil[f]);
+}
+
+- исписаће само vrednosti објекта:
+Fiat
+Punto
+2010
+bela
+
+
+11. пример - Napraviti objekat država: ime, gl. grad, kontinent, jeziк...
+
+let drzava = {
+nazivDrzave: "Srbija",
+kontinent: "Evropa",
+glavniGrad: "Beograd",
+brojStanovnika: "Stomiliona",
+brojStanovnikaPrestonice: "Petmiliona",
+jezik: "Srbski",
+};
+for(i in drzava) {
+console.log(i+": "+drzava[i]);
+}
+- исписаће све парове svojstvo: vrednost 
+nazivDrzave: Srbija
+kontinent: Evropa
+glavniGrad: Beograd
+brojStanovnika: Stomiliona
+brojStanovnikaPrestonice: Petmiliona
+jezik: Srbski
+
+
+12. пример - Promeniti sve vrednosti svojstva objekta iz prethodnog (11.) primera, pomoću For...in petlje. Zatim pomoću For...in petlje ispisati sve promenjene vrednosti.
+
+let drzava = {
+nazivDrzave: "Srbija",
+kontinent: "Evropa",
+glavniGrad: "Beograd",
+brojStanovnika: "Stomiliona",
+brojStanovnikaPrestonice: "Petmiliona",
+jezik: "Srbski",
+};
+for(s in drzava) {
+drzava[s]="Zanzibar";
+console.log(s+": "+drzava[s]);
+}
+- исписаће: 
+nazivDrzave: Zanzibar
+kontinent: Zanzibar
+glavniGrad: Zanzibar
+brojStanovnika: Zanzibar
+brojStanovnikaPrestonice: Zanzibar
+jezik: Zanzibar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
