@@ -1,0 +1,291 @@
+﻿14.02.2020. Primeri sa današnjeg predavanja:
+
+1. Primer:
+
+let osoba ={
+ime: "Jelena",
+prezime: "Kostic"
+}
+
+let osoba_b={};
+
+for(i in osoba) {
+osoba_b.i=" ";
+}
+
+console.log(osoba_b.ime);
+NEĆE DA FUNKCIONIŠE!
+
+1. primer na drugi način:
+
+let osoba ={
+ime: "Jelena",
+prezime: "Kostic"
+}
+
+let osoba_dva={};
+
+for(i in osoba) {
+osoba_dva[i]=" ";
+}
+" "
+console.log(osoba_dva.ime);
+ 
+undefined
+osoba_dva.ime="Marko";
+osoba_dva.prezime="Marković";
+"Marković"
+
+2. Primer: 
+
+let prvi_auto ={
+marka: "Fiat",
+model: "Punto"
+}
+
+let drugi_auto= new Objekt();
+
+for(s in prvi_auto) {
+drugi_auto[s]=" ";
+}
+
+3. Primer:
+
+let prvi_automobil ={
+marka: "Fiat",
+model: "Punto"
+}
+
+let drugi_automobil={};
+
+for(s in prvi_automobil) {
+drugi_automobil[s]=prvi_automobil[s];
+}
+"Punto"
+
+prvi_automobil.marka
+"Fiat"
+
+drugi_automobil.marka
+"Fiat"
+
+prvi_automobil.marka="bmw";
+"bmw"
+
+drugi_automobil.marka
+"Fiat"
+
+4. Napraviti objekat - osoba koji treba da ima svojstva: ime, prezime, jmbg i prebivalište. Zatim pomoću for in petlje napraviti drugi objekat koji ima ista svojstva kao prvi.
+
+let osoba_a={
+ime: "Miki",
+prezime: "Maus",
+jmbg: 14022020,
+prebivaliste: "Srbija"
+          }
+
+let osoba_b={};
+
+for(i in osoba_a) {
+osoba_b[i];
+}
+
+undefined
+
+console.log(osoba_b);
+ispisaće: {}
+
+5. Napraviti objekat automobil koji ima svojstva: marka, model, godina_proizvodnje, gorivo, boja, emisiona_klasa, broj_vrata i dodeliti mu neke vrednosti za sva svojstva. Zatim uz pomoć for in petlje napraviti objekat koji ima ista svojstva i iste vrednosti kao prvi objekat. (poslaće Filip tekst sa zadatkom svima na E-mail)
+
+let automobil= {
+marka: "Fiat",
+model: "Punto",
+godina_proizvodnje: 2010,
+gorivo: "Benzin",
+boja: "Bela",
+emisiona_klasa: "Prva",
+broj_vrata: 5
+}
+
+let automobil_dva={};
+
+for(i in automobil) {
+automobil_dva[i]= automobil[i];
+}
+
+ukoliko otkucaš:
+ automobil_dva 
+ispisaće: {marka: "Fiat", model: "Punto", godina_proizvodnje: 2010, gorivo: "Benzin", boja: "Bela", …}
+
+6. Primer za: Metode objekata
+
+let auto= {
+marka: "Fiat",
+model: "Punto",
+upali: function() {
+alert("Auto je upaljen!");
+}
+}
+
+auto.upali();
+
+- ispisaće u alert prozorčiću: Auto je upaljen!
+
+
+7. Napravite objekat osoba koji ima: ime, prezime, jmbg, prebivaliste. U okviru objekta definisati metodu koja ispisuje "Pozdrav svima!".
+
+
+let osobaA={
+ime: "Miki",
+prezime: "Maus",
+jmbg: 14022020,
+prebivaliste: "Srbija",
+upali: function() {
+alert("Pozdrav svima!");
+}       
+}
+
+
+undefined
+
+osobaA.upali();
+
+- ispisaće u alert prozorčiću: Pozdrav svima!
+
+
+
+8. Primer sa "this"
+
+let osoba={
+ime: "Miki",
+prezime: "Maus",
+jmbg: 14022020,
+prebivaliste: "Srbija",
+godinaRodjenja: 1998,
+predstaviSe: function(){
+alert("Zovem se "+this.ime+", prezivam se "+this.prezime);
+}
+}
+
+undefined
+
+osoba.predstaviSe();
+
+- ispisaće u alert prozorčiću: Zovem se Miki, prezivam se Maus
+
+
+9. Primer: Napraviti objekat osoba koji ima: ime, prezime, jmbg, prebivaliste, godinaRodjenja. Objekat treba da ima i dve metode. Prva metoda je metoda u kojoj se objekat predstavlja, a druga metoda je metoda u kojoj se računa koliko godina objekat ima.
+
+let osobaM={
+ime: "Miki",
+prezime: "Maus",
+prebivaliste: "Srbija",
+godinaRodjenja: 1998,
+predstaviSe: function(){
+alert("Zovem se "+this.ime+", prezivam se "+this.prezime);
+},
+imamGodina: function() {
+alert("Miki ima "+(2020-this.godinaRodjenja)+" godine.");
+
+}
+}
+
+osobaM.predstaviSe(); - ispisaće u alert prozorčiću: Zovem se Miki, prezivam se Maus.
+osobaM.imamGodina(); - ispisaće u alert prozorčiću: Miki ima 22 godine.
+
+
+
+10. Napravi objekat koji ima četiri para svojstvo:vrednost i metodu koja ispisuje sve parove svojstvo:vrednost.
+
+let objekat={
+ime: ":D",
+boja: ":D",
+godina: ":D",
+tip: ":D",
+ispisi: function(){
+for(i in objekat){
+if(typeof(objekat[i])=="function"){
+continue;}
+else{console.log(objekat[i]);}
+}
+}
+}
+
+- ispisaće: undefined
+
+objekat.ispisi();
+- ispisaće: 4:D
+
+
+11. Get i Set metode objekta (iz .pdf predavanja koje nam Filip šalje večeras):
+
+let automobil = {
+marka: "Fiat",
+model: "Punto",
+boja: "Bela"
+
+get tip(){
+return this.model;
+}
+};
+alert(automobil.model);
+
+
+
+
+12. Napraviti objekat osoba koji ima svojstva: ime i prezime i get metodu punoIme koja vraća ova dva svojstva.
+
+let osoba = {
+ime: "Miki",
+prezime: "Maus",
+get punoIme(){
+return this.ime+""+this.prezime;
+}
+}
+
+osoba.punoIme
+
+- ispisaće: "MikiMaus"
+
+13. PREPIŠI primer iz .pdf predavanja za "set" metodu:
+
+let automobil = {
+marka: "Fiat",
+model: "Punto",
+boja: "Bela"
+
+set tip(){
+return this.model;
+}
+};
+alert(automobil.model);
+
+
+
+14. Napraviti objekat osoba sa svojstvima: ime i prezime, potrebno je da objekat ima set metodu kojom se menja svojstvo ime.
+
+
+let osoba = {
+ime: "Miki",
+prezime: "Maus",
+set novoIme(novo){
+this.ime=novo;
+}
+}
+
+osoba.novoIme="Nikola";
+
+- ispisaće: "Nikola"
+
+osoba.ime
+
+- ispisaće: "Nikola"
+
+
+
+ZA DOMAĆI: Napraviti objekat automobil koji ima svojstva: marka, model, godina_proizvodnje, gorivo, boja.  napraviti deset drugih objekata kojji imaju isto svojstvo kao prvi objekat.
+
+
+
+
+
