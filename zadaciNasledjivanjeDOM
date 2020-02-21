@@ -1,0 +1,146 @@
+1. Definisati klasu po izboru , zatim definisati staticku metodu u okviru klase i metodu. Staticka metoda treba da pruza informacije o klasi ( Ovo je klasa .... poseduje svojstva ....) , zatim treba da poseduje metodu koja ispisuje sve parove svojstvo:vrednost. Napraviti objekat instancu vase klase , zatim pozvati staticku metodu i metodu nad objektom.
+
+class Osoba {
+
+            constructor(ime,prezime,jmbg,prebivaliste){
+                            this.ime=ime;
+                            this.prezime=prezime;
+                            this.jmbg=jmbg;
+                            this.prebivaliste=prebivaliste;
+      }
+
+            static mojaMetoda(){
+                            console.log("Ovo je klasa Osoba , poseduje cetiri svojstva i dve metode...");
+      }
+            
+            drugaMetoda(){
+                        for(let i in this){
+                            console.log(i+":"+this[i]);
+            }
+      }
+}
+
+
+let ucenik = new Osoba("Djordje","Nikolic",21251241241,"Beograd");
+
+Osoba.mojaMetoda();
+ucenik.drugaMetoda();
+
+
+Nasledjivanje klasa , zadatak sa predavanja
+
+
+class Osoba{
+        constructor(ime,prezime,jmbg,prebivaliste){
+                    this.ime=ime;
+                    this.prezime=prezime;
+            this.jmbg=jmbg;
+            this.prebivaliste=prebivaliste;
+    }
+
+        static oKlasi(){
+                        console.log("Ovo je klasa osoba koja sadrzi cetiri svojstva i dve metode");
+    }
+
+        predstaviSe(){
+                        console.log("Zovem se "+this.ime+", a prezivam se "+this.prezime);
+    }
+
+}
+
+
+class Ucenik extends Osoba{
+                
+                    constructor(ime,prezime,jmbg,prebivaliste,skola,razred){
+                                            super(ime,prezime,jmbg,prebivaliste);
+                                            this.skola=skola;
+                                            this.razred=razred;
+          }
+
+
+                    skolaIRazred(){
+                                    console.log("Ovaj ucenik ide u "+this.skola+" i pohadja "+this.razred+" razred");
+          }
+}
+
+class Radnik extends Osoba{
+                    constructor(ime,prezime,jmbg,prebivaliste,firma,radnoMesto){
+                                    super(ime,prezime,jmbg,prebivaliste);
+                                    this.firma=firma;
+                                                                        this.radnoMesto=radnoMesto;
+                    }
+
+                                        firmaImesto(){
+                                                            console.log("Radnik radi u "+this.firma+" na poziciji"+this.radnoMesto);
+                    }
+}
+
+let osoba=new Osoba("Marko","Markovic",22222222,"Beograd");
+let ucenik=new Ucenik("Petar","Petrovic",3131313131313,"Beograd","Gimnazija","Treci");
+let radnik=new Radnik("Nikola","Nikolic",21114124142,"Beograd","Nis","tocilac");
+
+
+
+2.Definisati klasu Zivotinja koja treba da ima svojstva vrsta i naziv i zivotnaSredina. Potrebno je da klasa ima staticku metodu koja ispisuje informacije o klasi. Zatim definisati klasu Pas koja nasledjuje klasu Zivotinja i ima svojstva rasa,tezina,boja,starost. Klasa pas treba da ima metodu koja ispisuje o kojoj rasi psa se radi. Napraviti instancu klase Zivotinja i instancu klase Pas. Zatim pozvati metode klase Zivotinja nad objektom klase zivotinja i metodu nad objektom klase Pas. Potom pozvati metodu klase Pas.
+
+
+class Zivotinja{
+        constructor(vrsta,naziv,zivotnaSredina){
+            this.vrsta=vrsta;
+            this.naziv=naziv;
+            this.zivotnaSredina=zivotnaSredina;
+    }
+
+    static mojaMetoda(){
+                console.log("Ovo je klasa Zivotinja sa tri svojstva!");
+  }
+}
+
+
+class Pas extends Zivotinja{
+                    constructor(vrsta,naziv,zivotnaSredina,rasa,tezina,boja,starost){
+                            super(vrsta,naziv,zivotnaSredina);
+                            this.rasa=rasa;
+                this.tezina=tezina;
+                this.boja=boja;
+                this.starost=starost;
+          }
+
+                    vratiRasu(){
+                            console.log(this.rasa);
+          }
+}
+
+
+let a=new Zivotinja("sisar","lav","kopno");
+let b=new Pas("sisar","pas","kopno","amstaf",30,"oranz-beo",10);
+Zivotinja.mojaMetoda();
+b.vratiRasu();
+
+
+3. U nekom html fajlu dodati html elementu Event Listener koji se poziva na odredjeni dogadjaj i menja stil ili sadrzaj nekog elementa.
+
+	let a=document.getElementById("naslov");
+        function reakcija(){
+            a.style.color="red";
+        }
+
+        function reakcijaDva(){
+            a.innerHTML="Promenio si sadrzaj";
+        }
+
+        function reakcijaTri(){
+            a.innerHTML="Ovo je tabela Premier lige";
+        }
+
+        function reakcijaCetiri(){
+            a.style.color="black";
+        }
+        
+        a.addEventListener("mouseover",reakcija);  
+        a.addEventListener("mouseover", reakcijaDva);   
+        a.addEventListener("mouseout",reakcijaTri);
+        a.addEventListener("mouseout", reakcijaCetiri);
+
+
+
