@@ -1,0 +1,230 @@
+﻿21.02.2020. Primeri sa današnjeg predavanja:
+
+1. Primer: Satičke metode
+
+class  Automobil{
+
+constructor(marka){
+this.proizvodjac=marka;
+}
+
+static statickaMetoda(){
+console.log("Ovo je statička metoda klase Automobil!");
+}
+}
+
+let punto= new  Automobil("Fiat");
+
+
+2. Definisati klasu po izboru, zatim definisati statičku metodu u okviru klase i metodu.
+Statička metoda treba da pruža informaciju o klasi ("Ovo je klasa... poseduje svojstva...), zatim treba da poseduje motodu koja ispisuje sve parove svojstvo:vrednost. 
+Napraviti objekat instancu vaše klase, zatim pozvati statičku metodu i metodu nad objektom.
+
+class Osoba {
+constructor(ime,prezime,jmbg,prebivaliste){
+this.ime=ime;
+this.prezime=prezime;
+this.jmbg=jmbg;
+this.prebivaliste=prebivaliste;
+}
+
+static mojaMetoda(){
+console.log("Ovo je klasa Osoba koja poseduje svojstva: ime, prezime, jmbg, prebivaliste.");
+}
+
+drugaMetoda(){
+for(let i in this){
+console.log(i+": "+this[i]);
+}
+}
+}
+
+let ucenik = new Osoba("Djordje", "Nikolić", 21022020, "Beograd");
+
+- ispisaće: undefined
+
+Osoba.mojaMetoda();
+
+- ispisaće:
+Ovo je klasa Osoba koja poseduje svojstva: ime, prezime, jmbg, prebivaliste.
+
+
+
+
+
+
+3. Primer: Nasleđivanje klasa (NE MORAMO KLASU PO KLASU DA KUCAMO U KONZOLI)
+
+class Osoba {
+constructor(ime,prezime,jmbg,prebivaliste){
+this.ime=ime;
+this.prezime=prezime;
+this.jmbg=jmbg;
+this.prebivaliste=prebivaliste;
+}
+
+
+static oKlasi(){
+console.log("Ovo je klasa Osoba koja poseduje četiri svojstva i dve metode.");
+}
+
+predstaviSe(){
+console.log("Zovem se "+this.ime+", a prezivam se "+this.prezime);
+}
+}
+
+class Ucenik extends Osoba{
+constructor(ime,prezime,jmbg,prebivaliste,skola,razred){
+super(ime,prezime,jmbg,prebivaliste);
+this.skola=skola;
+this.razred=razred;
+}
+}
+
+skolaIRazred(){
+console.log("Ovaj učenik ide u "+this.skola+" i pohadja "+this.razred+" razred");
+}
+}
+
+class Radnik extends Osoba{
+constructor(ime,prezime,jmbg,prebivaliste,firma,radnoMesto){
+super(ime,prezime,jmbg,prebivaliste);
+this.firma=firma;
+this.radnoMesto=radnoMesto;
+}
+
+firmaIMesto(){
+console.log("Radnik radi u "+this.firma+" na poziciji" +this.radnoMesto);
+}
+}
+
+
+let osoba= new Osoba("Miki", "Maus", 21022020, "Beograd");
+
+Osoba.oKlasi();
+
+osoba.predstaviSe();
+
+let ucenik= new Ucenik("Petar", "Petrovic", 03215623, "Beograd", "Gimnazija", "Treći");
+
+ucenik.skolaIRazred();
+
+let radnik= new Radnik("Nikola", "Nikolic", 211212, "Beograd", "NIS", "Točilac");
+
+
+
+ili:
+
+let osoba= new Osoba("Miki", "Maus", 21022020, "Beograd");
+let ucenik= new Ucenik("Petar", "Petrovic", 03215623, "Beograd", "Gimnazija", "Treći");
+let radnik= new Radnik("Nikola", "Nikolic", 211212, "Beograd", "NIS", "Točilac");
+
+
+
+
+KADA IMA MNOGO DA SE KUCA - NAJBOLJE JE UMESTO konzole DA SE RADI U VISUAL STUDIO CODE-u!!!!!!
+4. Definisati klasu Zivotinja koja treba da ima svojstva: vrsta, naziv, zivotnaSredina.
+Potrebno je da klasa ima statičku metodu koja ispisuje informacije o klasi.
+Zatim definisati klasu Pas koja nasledjuje klasu Zivotinja i ima svojstva: rasa, tezina, boja, starost.
+Klasa pas treba da ima metodu koja ispisuje o kojoj rasi psa se radi.
+Napraviti instancu klase Zivotinja i instancu klase Pas. Zatim pozvati metode klasa Zivotinja nad objektom klasa Zivotinja i metodu nad objektom klasa Pas.
+Potom pozvati metodu klase Pas.
+
+class Zivotinja {
+    constructor(vrsta, naziv, zivotnaSredina){
+        this.vrsta=vrsta;
+        this.naziv=naziv;
+        this.zivotnaSredina=zivotnaSredina;
+        }
+
+        static mojaMetoda(){
+            console.log("Ovo je klasa Životinja koja ima svojstva: vrsta, naziv, životna sredina.");
+            }
+        }
+
+class Pas extends Zivotinja{
+constructor(vrsta, naziv, zivotnaSredina, rasa, tezina, boja, starost){
+    super(vrsta, naziv, zivotnaSredina);
+    this.rasa=rasa;
+    this.tezina=tezina;
+    this.boja=boja;
+    this.starost=starost;
+}
+
+vratiRasu(){
+    console.log(this.rasa);
+    }
+    }          
+
+let a= new Zivotinja("sisar", "lav", "Afrika");
+let b= new Pas("sisar", "Bigl", 15, "Crno-beli", 12);
+
+Zivotinja.mojaMetoda();
+
+- ispisaće:
+Ovo je klasa Životinja koja ima svojstva: vrsta, naziv, životna sredina.
+
+b.vratiRasu();
+
+- ispisaće:
+Crno-beli
+
+
+5. Primer: JS HTML DOM metode
+
+NE MOŽE DA SE RADI U KONZOLI!
+
+U nekom html fajlu dodati html elementu Event Listener koji se poziva na odredjeni dogadjaj i menja stil ili sadržaj nekog elementa.
+
+
+let a=document.getElementById("naslov");
+        function reakcija(){
+            a.style.color="red";
+        }
+
+        function reakcijaDva(){
+            a.innerHTML="Promenio si sadrzaj";
+        }
+
+        function reakcijaTri(){
+            a.innerHTML="Ovo je tabela Premier lige";
+        }
+
+        function reakcijaCetiri(){
+            a.style.color="black";
+        }
+        
+        a.addEventListener("mouseover",reakcija);  
+        a.addEventListener("mouseover", reakcijaDva);   
+        a.addEventListener("mouseout",reakcijaTri);
+        a.addEventListener("mouseout", reakcijaCetiri);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
