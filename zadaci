@@ -1,0 +1,97 @@
+1.Napraviti konstruktorsku  funkciju Vozilo koja ima svojstva tip , namena, godinaProizvodnje, zapremina. Potrebno je napraviti pet objekata uz pomoc ove funkcije i pozvati njihova svojstva.
+
+
+2.Svakom objektu iz prethodnog zadatka dodeliti novo svojstvo , zatim ispisati vrednosti novih svojstava. Takodje potrebno je pozvati ispisivanje novog svojstva prvog objekta nad drugim objektom i pretpostaviti sta ce biti ispisano.
+
+
+3. Potrebno je na prva tri objekta iz prethodnog zadatka dodati metode. Metoda prvog objekta izracunava starost vozila , metoda drugog objekta ispisuje sva svojstva objekta u formatu svojstvo:vrednost , metoda treceg objekta pravi objekat klon treceg objekta.
+
+function Vozilo(tip,namena,godinaProizvodnje,zapremina){
+        this.tip=tip;
+        this.namena=namena;
+        this.godinaProizvodnje=godinaProizvodnje;
+    this.zapremina=zapremina;
+}
+
+
+let prvoVozilo=new Vozilo("Automobil","Prevoz putnika",2003,1300);
+let drugoVozilo=new Vozilo("Kamion","Prevoz tereta",2010,5000);
+let treceVozilo=new Vozilo("Traktor","Obrada zemlje",2000,2000);
+
+
+
+prvoVozilo.starost=function() {
+                console.log("Starost vozila je: "+(2020-this.godinaProizvodnje));
+}
+
+
+drugoVozilo.ispisiSvojstva=function() {
+                    for( i in drugoVozilo){
+                            console.log(i+" : "+drugoVozilo[i]);
+          }
+
+
+let treceVoziloKlon={};
+treceVozilo.napraviKlon=function(){
+                    
+                    for(s in this){
+                            treceVoziloKlon[s]=this[s];}
+}
+}
+
+
+
+4. Definisati klasu Osoba , klasa ima svojstva ime i prezime. Zatim kreirati tri objekta ove klase. Svaki put kada se kreira objekat ispisuje se poruka da je kreiran objekat klase Osoba.
+
+		class Osoba{
+				constructor(ime,prezime){
+					this.ime=ime;
+					this.prezime=prezime;
+					console.log("Kreiran je objekat klase Osoba");
+}
+}
+				let a=new Osoba("Marko","Markovic");
+				let b=new Osoba("Petar","Petrovic");
+				let c=new Osoba("Ivan","Ivanovic");
+
+
+
+
+
+5. Prethodnom zadatku dodati dve metode. Prva metoda izracunava starost osobe i ispisuje da li je osoba punoletna ili ne. Druga metoda ispisuje puno ime i prezime osobe. Pozvati obe metode na sva tri objekta.
+
+ class Osoba{
+                constructor(ime,prezime,godinaRodjenja){
+                    this.ime=ime;
+                    this.prezime=prezime;
+                    this.godinaRodjenja=godinaRodjenja;
+                    console.log("Kreiran je objekat klase Osoba");
+}
+
+
+                    starostOsobe(){
+                                if((2020-this.godinaRodjenja)>18){
+                                        console.log("Osoba je punoletna!");
+                }
+                                else{
+                                        console.log("Osoba nije punoletna!");
+                }
+}
+
+
+                    ispisivanje(){
+                                    console.log(this.ime+" "+this.prezime);
+          }
+    }
+
+
+a=new Osoba("marko","markovic",1990);
+b=new Osoba("petar","petrovic",2010);
+
+
+a.starostOsobe();
+b.ispisivanje();
+
+
+
+
