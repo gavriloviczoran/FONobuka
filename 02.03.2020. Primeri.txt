@@ -1,0 +1,167 @@
+﻿02.03.2020. Primeri sa današnjeg predavanja:
+
+1. Primer (za Statičke metode): 
+Napisati klasu Objekat koja poseduje svojstva: ime, prezime, jmbg. Klasa treba da poseduje statičku metodu koja ispisuje poruku: "Ovo je statička metoda klase Osoba." Zatim napraviti objekat klase Osoba i izvršiti pozivanje statičke metode.
+
+class Osoba{
+constructor(ime,prezime,jmbg){
+this.ime=ime;
+this.prezime=prezime;
+this.jmbg=jmbg;
+}
+
+static mojaMetoda(){
+console.log("Ovo je statička metoda klase Osoba.");
+}
+}
+
+- ispisaće: undefined
+
+
+let osobaJedan=new Osoba("Djordje", "Nikolić", 21022020);
+
+- ispisaće: undefined
+
+
+
+Osoba.mojaMetoda();
+
+- ispisaće: Ovo je statička metoda klase Osoba.
+
+
+
+
+2. Primer (za Nasleđivanje klasa):
+Napisati klasu Osoba koja poseduje svojstva: ime, prezime, jmbg, prebivalište i mestoRodjenja. Potrebno je da klasa ima metodu predstaviSe koja će ispisivati: ime i prezime objekta.
+Zatim napisati klasu Radnik koja nasleđuje klasu Osoba i ima svojstva: firma, radnoMesto, godineStaza.
+Klasa Radnik treba da poseduje metodu podaciizFirme koja će ispisivati naziv firme u kojoj radi i mesto na kome radi.
+Definisati objekat klase Osoba, i pozvati metodu predstaviSe nad njim.
+Zatim definisati objekat klase Radnik i nad tim objektom pozvati obe metode.
+
+class Osoba {
+constructor(ime,prezime,jmbg,prebivaliste,mestoRodjenja){ 
+this.ime=ime; 
+this.prezime=prezime; 
+this.jmbg=jmbg;
+this.prebivaliste=prebivaliste;
+this.mestoRodjenja=mestoRodjenja;
+}
+
+predstaviSe(){ 
+console.log("Zovem se "+this.ime+" "+this.prezime);
+} 
+}
+
+- ispisaće: undefined
+
+class Radnik extends Osoba{
+constructor(ime,prezime,jmbg,prebivaliste,mestoRodjenja,firma,radnoMesto,godineStaza){ 
+super(ime,prezime,jmbg,prebivaliste,mestoRodjenja); 
+this.firma=firma; 
+this.radnoMesto=radnoMesto;
+this.godineStaza=godineStaza;
+};
+ 
+podaciizFirme(){
+console.log("Radim u kompaniji koja se zove "+this.firma+" radno mesto "+this.radnoMesto);
+}
+}
+
+let osobaJedan=new Osoba("Djordje", "Nikolić", 21022020, "Beograd", "Beograd");
+
+- ispisaće: undefined
+
+
+let radnikJedan=new Radnik("Petar", "Petrovic", 1020320202, "Subotica", "Subotica", "Telekom", "Sistem administrator", 30);
+
+- ispisaće: undefined
+
+radnikJedan.predstaviSe();
+radnikJedan.podaciizFirme();
+
+- ispisaće: undefined
+
+
+
+
+
+
+
+
+
+
+
+
+3. Primer ( addEventListener() metod ): 
+Napraviti html stranicu koja sadrži jedan paragraf kome je potrebno dodati EventListener koji će kada se klikne na paragraf promeniti veličinu i boju slova u paragrafu.
+
+(neki html unesi, npr.:
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body onload="novaReakcija()">
+    <h2>netracno</h2>
+    <script src="mmain.js">
+</script>
+
+i nastaviš sa ovim zadatkom:
+
+<p id="paragraf">Ovo je paragraf!"</p>
+</body>
+<script>
+function reakcija(){
+a.style.color="red";
+a.style.fontSize="55px";
+}
+
+let a=document.getElementById("paragraf");
+a.addEventListener("click", reakcija);
+</script>
+</html>
+
+
+KOMENTAR: umesto "click", može "mouseover" ili "mouseout"
+
+4. Primer ( addEventListener() metod ): 
+Nekom html elementu dodati dva EventListener-a, prvi treba da reaguje na mouseover, a drugi na mouseout događaj.
+Elementu je potrebno menjati boju na oba događaja.
+
+
+POSLAĆE Filip urađen zadatak!
+
+
+
+5. Primer: 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
