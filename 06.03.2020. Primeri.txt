@@ -1,0 +1,241 @@
+﻿06.03.2020. Primeri sa današnjeg predavanja:
+
+1. Primer (document.getElementById & appendChild): 
+Napraviti html stranicu...
+
+Kucamo u Visual Studio Code-u
+
+<body>
+<div id="naslov">
+
+
+</div>
+</body>
+<script>
+let a=document.getElementById("naslov");
+let b=document.createElement("h1");
+let c=document.createTextNode("Ovo je naslov stranice");
+b.appendChild(c);
+
+
+
+
+</script>
+
+2. Primer (zadatak sa časa Filipov primer u Visual Studio Code-u):
+
+.
+.
+.
+<li>Chelsea</li>
+</ul>
+
+</body>
+<script>
+let roditelj=document.getElementById("ulid");
+let noviKlub=document.createElement("li");
+let nazivKluba=document.createTextNode("Totenhem");
+noviKlub.appendChild(nazivKluba);
+let drugiKlub=document.getElementById("ars");
+roditelj.insertBefore(noviKlub, drugiKlub);
+
+</script>
+
+
+3. Primer:
+Napraviti html stranicu koja poseduje dva diva.
+Prvi div treba da ima id "naslov" i treba da bude inicijalno prazan.
+Drugi div treba da ima id "sadrzaj" i treba da sadrži tri paragrafa.
+Unutar prvog diva dodati h3 element koji sadrži tekst "Aktivni oglasi:".
+Unutar drugog diva dodati novi element p koji treba da ispiše "Oglas broj 2", između prvog i drugog paragrafa.
+.
+.
+.
+</body>
+<script>
+let a=document.getElementById("naslov");
+let b=document.createElement("h3");
+let c=document.createTextNode("Aktivni oglasi:");
+b.appendChild(c);
+a.appendChild(b);
+
+let drugiDiv=document.getElementById("sadrzaj");
+let drugiParagraf=document.getElementById("treci");
+let novi=document.createElement("p");
+let noviTekst=document.createTextNode("Oglas broj 2");
+novi.appendChild(noviTekst);
+drugiDiv.insertBefore(novi, drugiParagraf);
+</script>
+
+4. Primer (Brisanje html elemenata pomoću remove() ):
+.
+.
+.
+a.remove()
+</script>
+
+- izbrisaće npr. paragraf "a" 
+
+
+
+5. Primer ("replaceChild()metoda"): 
+Napraviti html stranicu koja sadrži dva div elementa.
+Prvi div ima id "naslov",
+drugi div ima id "tabela".
+Prvom divu dodati element "h3" koji ispisuje "Tabela LingLong liga:".
+Drugi div je takođe prazan i potrebno mu je dodati brojivu listu.
+Zatim dodati tri elementa brojive liste i pokrenuti stranicu u pretraživaču.
+Nakon toga umesto drugog na tabeli napraviti novi element liste i zameniti ga sa njim.
+<body>
+.
+.
+.
+</body>
+<script>
+let prviDiv=document.createElement("naslov");
+.
+.
+.
+let prviKlub=document.createElement("li");
+let nazivPrvogKluba=document.createTextNode("Crvena Zvezda");
+prviKlub.appendChild(nazivPrvogKluba);
+lista.appendChild(prviKlub);
+
+let drugiKlub=document.createElement("li");
+let nazivDrugogKluba=document.createTextNode("Partizan");
+drugiKlub.appendChild(nazivDrugogKluba);
+lista.appendChild(drugiKlub);
+
+let treciKlub=document.createElement("li");
+let nazivTrecegKluba=document.createTextNode("Vojvodina");
+treciKlub.appendChild(nazivTrecegKluba);
+lista.appendChild(treciKlub);
+
+let cetvrtiKlub=document.createElement("li");
+let nazivCetvrtogKluba=document.createTextNode("Cukaricki");
+cetvrtiKlub.appendChild(nazivCetvrtogKluba);
+lista.appendChild(cetvrtiKlub, treciKlub);
+
+</script>
+
+
+6. Primer (<p>"Ovo je paragraf!"</p>):
+
+.
+.
+.
+<p>"Ovo je paragraf!"</p>
+<p>"Ovo je paragraf!"</p>
+<p>"Ovo je paragraf!"</p>
+<p>"Ovo je paragraf!"</p>
+<p>"Ovo je paragraf!"</p>
+<p>"Ovo je paragraf!"</p>
+<p>"Ovo je paragraf!"</p>
+<p>"Ovo je paragraf!"</p>
+<p>"Ovo je paragraf!"</p>
+</body>
+<script>
+.
+.
+.
+
+- ispisaće: 9
+
+7. Primer (JavaScript Moduli):
+Export
+
+Na dva načina se piše "export": ispod ili iznad našeg skripta.
+PRVI NAČIN:
+export{radniDani, pozdrav};
+let radniDani=["pon", "uto", "sre", "cet", "pet"];
+function pozdrav(){
+alert("Dobar dan!");
+}
+
+DRUGI NAČIN:
+let radniDani=["pon", "uto", "sre", "cet", "pet"];
+function pozdrav(){
+alert("Dobar dan!");
+}
+
+export{radniDani, pozdrav};
+
+
+
+8. Primer (JavaScript Moduli):
+Import
+
+PRVI NAČIN:
+import {radniDani, pozdrav}
+
+
+
+DRUGI NAČIN:
+import*as abc from
+
+
+9. Primer (JavaScript Moduli):
+metoda setTimeout()
+Čeka određeno vreme i onda se javi!
+
+Napisati f-ju koja traži unos broja godina od korisnika, 5 sekundi nakon što je korisnik učitao stranicu potrebno je pozvati funkciju.
+.
+.
+.
+setTimeout(xxx,5000);
+function xxx(){
+prompt("Mali koliko ti je godina?");
+}
+
+Filip je uradio ovako:
+function unosGodina(){
+prompt("Unesite broj vaših godina:");
+}
+setTimeout(unosGodina,5000);
+
+10. Primer (JavaScript Moduli):
+metoda setInterval()
+
+function unosGodina(){
+prompt("Unesite broj vaših godina:");
+}
+setInterval(unosGodina,10000);
+
+
+
+
+
+POSLAĆE Filip urađene zadatke!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
