@@ -1,7 +1,8 @@
 ﻿06.03.2020. Primeri sa današnjeg predavanja:
 
 1. Primer (document.getElementById & appendChild): 
-Napraviti html stranicu...
+Napraviti html stranicu koja treba da sadrzi div koji ima id "naslov" i inicijalno je prazan. 
+Zatim uz pomoc skripta , tom divu dodati h1 element koji treba da sadrzi tekst "Ovo je naslov stranice!". 
 
 Kucamo u Visual Studio Code-u
 
@@ -14,19 +15,21 @@ Kucamo u Visual Studio Code-u
 <script>
 let a=document.getElementById("naslov");
 let b=document.createElement("h1");
-let c=document.createTextNode("Ovo je naslov stranice");
+let c=document.createTextNode("Ovo je naslov stranice!");
 b.appendChild(c);
-
-
-
+a.appendChild(b);
 
 </script>
 
 2. Primer (zadatak sa časa Filipov primer u Visual Studio Code-u):
 
-.
-.
-.
+<body>
+        
+        <h1 id="naslov">Ovo je tabela Premijer lige</h1>
+        
+        <ul id="ulid">
+            <li>Liverpool</li>
+            <li id="ars">Arsenal</li>
 <li>Chelsea</li>
 </ul>
 
@@ -48,9 +51,14 @@ Prvi div treba da ima id "naslov" i treba da bude inicijalno prazan.
 Drugi div treba da ima id "sadrzaj" i treba da sadrži tri paragrafa.
 Unutar prvog diva dodati h3 element koji sadrži tekst "Aktivni oglasi:".
 Unutar drugog diva dodati novi element p koji treba da ispiše "Oglas broj 2", između prvog i drugog paragrafa.
-.
-.
-.
+<body>
+<div id="naslov">
+</div>
+<div id="sadrzaj">
+<p>Ovo je prvi oglas...</p>
+<p id="treci">Ovo je treci oglas...</p>
+<p>Ovo je cetvrti oglas...</p>
+</div>
 </body>
 <script>
 let a=document.getElementById("naslov");
@@ -87,15 +95,20 @@ Drugi div je takođe prazan i potrebno mu je dodati brojivu listu.
 Zatim dodati tri elementa brojive liste i pokrenuti stranicu u pretraživaču.
 Nakon toga umesto drugog na tabeli napraviti novi element liste i zameniti ga sa njim.
 <body>
-.
-.
-.
+<div id="naslov"></div>
+        <div id="tabela"></div>
 </body>
 <script>
-let prviDiv=document.createElement("naslov");
-.
-.
-.
+ let prviDiv=document.getElementById("naslov");
+        let a=document.createElement("h3");
+        let b=document.createTextNode("Tabela LingLong liga:")
+        a.appendChild(b);
+        prviDiv.appendChild(a);
+
+        let drugiDiv=document.getElementById("tabela");
+        let lista=document.createElement("ol");
+        drugiDiv.appendChild(lista);
+
 let prviKlub=document.createElement("li");
 let nazivPrvogKluba=document.createTextNode("Crvena Zvezda");
 prviKlub.appendChild(nazivPrvogKluba);
@@ -205,7 +218,7 @@ setInterval(unosGodina,10000);
 
 
 
-POSLAĆE Filip urađene zadatke!
+POSLAĆE Filip urađene zadatke na Email svima!
 
 
 
